@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-
 import GoogleLogin from "react-google-login";
 import { useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc"; //this is just a google logo
@@ -8,7 +7,11 @@ import logo from "../assets/logowhite.png";
 
 import { gapi } from "gapi-script";
 
+import { client } from "../client";
+
 const Login = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     function start() {
       gapi.client.init({
@@ -32,6 +35,10 @@ const Login = () => {
       userName: name,
       image: imageUrl,
     };
+
+    client.createIfNotExists(doc).then(() => {
+      navigate("/", { replace: true });
+    });
   };
 
   return (
