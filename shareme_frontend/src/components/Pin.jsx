@@ -97,7 +97,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
               )}
             </div>
 
-            <div className="flex justify-between items-center gap-2 w-100">
+            <div className="flex justify-between items-center gap-2 w-full">
               {destination && (
                 <a
                   href={destination}
@@ -107,7 +107,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
                 >
                   <BsFillArrowUpRightCircleFill />
                   {destination.length > 20
-                    ? destination.slice(8, 24)
+                    ? destination.slice(8, 17)
                     : destination.slice(8)}
                 </a>
               )}
