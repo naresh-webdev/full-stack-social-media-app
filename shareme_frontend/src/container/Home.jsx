@@ -32,7 +32,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="flex bg-gray-50 md:flex-row flex-col h-screen transition-height duration-75 ease-out">
+    <div className="flex bg-gray-200 md:flex-row flex-col h-screen transition-height duration-75 ease-out">
       <div className="hidden md:flex h-screen flex-initial">
         <Sidebar user={user && user} />
       </div>
@@ -52,7 +52,7 @@ const Home = () => {
             <img
               src={user?.image}
               alt="logo"
-              className="w-16 "
+              className="h-12 w-12 "
               referrerPolicy="no-referrer"
             />
           </Link>
